@@ -1,0 +1,1 @@
+₍^ >ヮ<^₎ hän sanoo 'mjaaaaaaaaaau'
