@@ -4,8 +4,7 @@ from varasto import Varasto
 
 class TestVarasto(unittest.TestCase):
     def setUp(self):
-        return None
-        # self.varasto = Varasto(10)
+         self.varasto = Varasto(10)
 
     def test_konstruktori_luo_tyhjan_varaston(self):
         # https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertAlmostEqual
