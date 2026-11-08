@@ -1,21 +1,9 @@
 from varasto import Varasto
 
+mehua = Varasto(100.0)
+olutta = Varasto(100.0, 20.2)
 
-def main():
-    mehua = Varasto(100.0)
-    olutta = Varasto(100.0, 20.2)
-
-    print("Luonnin jälkeen:")
-    print(f"Mehuvarasto: {mehua}")
-    print(f"Olutvarasto: {olutta}")
-
-    print("Olut getterit:")
-    print(f"saldo = {olutta.saldo}")
-    print(f"tilavuus = {olutta.tilavuus}")
-    print(f"paljonko_mahtuu = {olutta.paljonko_mahtuu()}")
-
-    print("Mehu setterit:")
-    print("Lisätään 50.7")
+def op1():
     mehua.lisaa_varastoon(50.7)
     print(f"Mehuvarasto: {mehua}")
     print("Otetaan 3.14")
@@ -28,6 +16,8 @@ def main():
     print(huono)
 
     print("Varasto(100.0, -50.7)")
+
+def op2():
     huono = Varasto(100.0, -50.7)
     print(huono)
 
@@ -41,6 +31,7 @@ def main():
     mehua.lisaa_varastoon(-666.0)
     print(f"Mehuvarasto: {mehua}")
 
+def op3():
     print(f"Olutvarasto: {olutta}")
     print("olutta.ota_varastosta(1000.0)")
     saatiin = olutta.ota_varastosta(1000.0)
@@ -52,6 +43,27 @@ def main():
     saatiin = mehua.ota_varastosta(-32.9)
     print(f"saatiin {saatiin}")
     print(f"Mehuvarasto: {mehua}")
+
+def main():
+    print(f'''
+          Luonnin jälkeen:\n
+          Mehuvarasto: {mehua}\n
+          Olutvarasto: {olutta}\n 
+
+          Olut getterit:\n
+          saldo = {olutta.saldo}\n
+          saldo = {olutta.saldo}\n
+          paljonko_mahtuu = {olutta.paljonko_mahtuu()}\n
+
+          Mehu setterit:\n
+          Lisätään 50.7\n
+          ''')
+
+    op1()
+    
+    op2()
+
+    op3()
 
 
 if __name__ == "__main__":

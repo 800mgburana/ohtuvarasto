@@ -1,0 +1,17 @@
+[tool.pylint.format]
+
+max-line-length = 80
+
+indent-after-paren = 4
+
+indent-string = "    "
+
+[tool.pylint.refactoring]
+
+max-nested-blocks = 2
+
+max-statement = 10
+
+[tool.pylint.main]
+
+ignore = ".gitignore"
