@@ -147,11 +147,17 @@ def make_handler(manager):  # pylint: disable=too-many-statements
             if self.path == "/api/warehouses":
                 self._send_json(200, manager.list_warehouses())
                 return
-            if self.path in ("/", "/index.html"):
-                page = Path(__file__).parent / "static" / "index.html"
+            static_files = {
+                "/": ("index.html", "text/html; charset=utf-8"),
+                "/index.html": ("index.html", "text/html; charset=utf-8"),
+                "/styles.css": ("styles.css", "text/css; charset=utf-8"),
+            }
+            if self.path in static_files:
+                filename, content_type = static_files[self.path]
+                page = Path(__file__).parent / "static" / filename
                 body = page.read_bytes()
                 self.send_response(200)
-                self.send_header("Content-Type", "text/html; charset=utf-8")
+                self.send_header("Content-Type", content_type)
                 self.send_header("Content-Length", str(len(body)))
                 self.end_headers()
                 self.wfile.write(body)
